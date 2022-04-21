@@ -155,21 +155,21 @@ jobs:
         with:
           name: image_tags
           workflow: az-vote-cicd.yml
-          run_id: ${{ github.event.client_payload.runid }}
+          run_id: ${{ github.run_id }}
           path: ${{ github.workspace }}/image_tags
       - name: Download Manifests Templates
         uses: dawidd6/action-download-artifact@v2
         with:
           name: manifests
           workflow: az-vote-cicd.yml
-          run_id: ${{ github.event.client_payload.runid }}
+          run_id: ${{ github.run_id }}
           path: ${{ github.workspace }}/manifests
       - name: Download Utils
         uses: dawidd6/action-download-artifact@v2
         with:
           name: utils
           workflow: az-vote-cicd.yml
-          run_id: ${{ github.event.client_payload.runid }}
+          run_id: ${{ github.run_id }}
           path: ${{ github.workspace }}/utils
       - name: Read Image Tags
         env:
