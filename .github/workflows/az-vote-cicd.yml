@@ -151,17 +151,17 @@ jobs:
         with:
           ref: ${{ github.event.client_payload.sha }}
       - name: Download Image Tags
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v2.0.8
         with:
           name: image_tags
           path: ${{ github.workspace }}/image_tags
       - name: Download Manifests Templates
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v2.0.8
         with:
           name: manifests
           path: ${{ github.workspace }}/manifests
       - name: Download Utils
-        uses: dawidd6/action-download-artifact@v2
+        uses: actions/download-artifact@v2.0.8
         with:
           name: utils
           path: ${{ github.workspace }}/utils
