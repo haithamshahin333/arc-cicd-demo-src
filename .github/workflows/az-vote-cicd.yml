@@ -132,6 +132,11 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - uses: trstringer/manual-approval@v1
+      with:
+        secret: ${{ github.TOKEN }}
+        approvers: haithamshahin333
+        minimum-approvals: 1
     - name: Automated Test
       run: |
         chmod +x ${{ github.workspace }}/utils/smoke-test.sh
